@@ -1,0 +1,80 @@
+# auth routes
+
+auth-login:
+  path: /api/login
+
+auth-register:
+  path: /api/register
+  controller: App\Controller\AuthController::register
+  methods: POST
+
+# user routes
+
+user-ticket-index:
+  path: /api/user/tickets
+  controller: App\Controller\UserTicketController::index
+  methods: GET
+
+user-ticket-store:
+  path: /api/user/tickets
+  controller: App\Controller\UserTicketController::store
+  methods: POST
+
+user-ticket-show:
+  path: /api/user/tickets/{ticketId}
+  controller: App\Controller\UserTicketController::show
+  methods: GET
+
+user-ticket-update:
+  path: /api/user/tickets/{ticketId}
+  controller: App\Controller\UserTicketController::update
+  methods: PUT
+
+user-ticket-destroy:
+  path: /api/user/tickets/{ticketId}
+  controller: App\Controller\UserTicketController::destroy
+  methods: DELETE
+
+# support routes
+
+support-ticket-index:
+  path: /api/support/tickets
+  controller: App\Controller\SupportTicketController::index
+  methods: GET
+
+support-ticket-show:
+  path: /api/support/tickets/{ticketId}
+  controller: App\Controller\SupportTicketController::show
+  methods: GET
+
+support-status-update:
+  path: /api/support/tickets/{ticketId}/status
+  controller: App\Controller\TicketStatusController::update
+  methods: PUT
+
+# common routes
+
+message-index:
+  path: /api/tickets/{ticketId}/messages
+  controller: App\Controller\MessageController::index
+  methods: GET
+
+message-store:
+  path: /api/tickets/{ticketId}/messages
+  controller: App\Controller\MessageController::store
+  methods: POST
+
+message-show:
+  path: /api/tickets/{ticketId}/messages/{messageId}
+  controller: App\Controller\MessageController::show
+  methods: GET
+
+message-update:
+  path: /api/tickets/{ticketId}/messages/{messageId}
+  controller: App\Controller\MessageController::update
+  methods: PUT
+
+message-destroy:
+  path: /api/tickets/{ticketId}/messages/{messageId}
+  controller: App\Controller\MessageController::destroy
+  methods: DELETE
